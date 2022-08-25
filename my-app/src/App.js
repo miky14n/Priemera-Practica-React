@@ -17,7 +17,13 @@ function App() {
   },[])
   return (
     <div className="App">
-      
+      Lista de Niños
+      { !todos? 'Cargando Datos':
+        todos.map((todo,index)=>{
+          return <table>  <tbody> <tr> <td> Nombre: {todo.name} </td>  <td>Apellido: {todo.lastName}</td>  <td>Cumpleaños {todo.birthDate}</td>  <td>CI: {todo.ci}</td>  </tr> </tbody></table>
+        })
+      }
+      <a href="./componentes/Post" >Agregar Niños  </a>
     </div>
   );
 }
